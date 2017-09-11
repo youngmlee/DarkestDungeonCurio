@@ -7,42 +7,49 @@
   background-color: #1c1c1c;
 }
 
-.main {
+footer {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #1c1c1c;
+}
+
+#main {
   width: 80%;
   height: 600px;
   margin: 0 auto;
   background-color: red;
 }
 
-.ruins {
+#ruins {
   width: 80%;
   height: 400px;
   margin: 0 auto;
   background-color: orange;
 }
 
-.warrens {
+#warrens {
   width: 80%;
   height: 400px;
   margin: 0 auto;
   background-color: yellow;
 }
 
-.weald {
+#weald {
   width: 80%;
   height: 400px;
   margin: 0 auto;
   background-color: green;
 }
 
-.cove {
+#cove {
   width: 80%;
   height: 400px;
   margin: 0 auto;
   background-color: blue;
 }
 
-.courtyard {
+#courtyard {
   width: 80%;
   height: 400px;
   margin: 0 auto;
