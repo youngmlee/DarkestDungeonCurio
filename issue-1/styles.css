@@ -7,6 +7,14 @@
   background-color: #1c1c1c;
 }
 
+#jumbotron > #main {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
 footer {
   width: 80%;
   height: 100px;
@@ -18,7 +26,31 @@ footer {
   width: 80%;
   height: 600px;
   margin: 0 auto;
-  background-color: red;
+  background-color: #000;
+}
+
+#main img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  height: 200px;
+}
+
+.links {
+  position: absolute;
+  margin: auto;
+  top: 220px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  text-align: center;
+  width: 400px;
+  height: 30px;
 }
 
 #ruins {
