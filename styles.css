@@ -154,3 +154,12 @@ footer {
 .long {
   background-color: red;
 }
+
+.provisions-container {
+  margin-left: 30px;
+  margin-bottom: -20px;
+  display: inline-block;
+  width: 600px;
+  height: 80px;
+  background-color: yellow;
+}
