@@ -129,3 +129,28 @@ footer {
   width: 200px;
   height: 120px;
 }
+
+.button-box {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.ruinsb,
+.warrensb,
+.wealdb,
+.coveb,
+.courtyardb {
+  display: block;
+}
+
+.short {
+  background-color: green;
+}
+
+.med {
+  background-color: yellow;
+}
+
+.long {
+  background-color: red;
+}
