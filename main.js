@@ -21,3 +21,13 @@ for (var i = 0; i < $clear.length; i++) {
     document.querySelector('.courtyardl-image').style.display = 'none'
   },)
 }
+
+var $curio = document.querySelectorAll('.curios img')
+
+for (var i = 0; i < $curio.length; i++) {
+  $curio[i].addEventListener('click', function(event) {
+    var $target = event.target
+    $target.innerHTML = ''
+    $target.setAttribute('src', 'images/curios/all/crate.png')
+  })
+}
