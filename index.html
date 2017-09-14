@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link href="styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Darkest Dungeon Curios</title>
   </head>
   <body>
@@ -21,11 +22,15 @@
     <div id="ruins">
       <h1>Ruins</h1>
       <div class="button-box">
-        <button class="ruinsb short">Short</button>
-        <button class="ruinsb med">Medium</button>
-        <button class="ruinsb long">Long</button>
+        <input type="button" onclick="document.querySelector('.ruinss-image').style.display = 'block'" class="ruinsb short" value="Short" />
+        <input type="button" onclick="document.querySelector('.ruinsm-image').style.display = 'block'" class="ruinsb med" value="Medium" />
+        <input type="button" onclick="document.querySelector('.ruinsl-image').style.display = 'block'" class="ruinsb long" value="Long" />
+        <input type="button" class="clear" value="Clear" />
       </div>
       <div class="provisions-container">
+        <img class="ruinss-image" src="images/provisions/recommended/ruins-s.png" />
+        <img class="ruinsm-image" src="images/provisions/recommended/ruins-m.png" />
+        <img class="ruinsl-image" src="images/provisions/recommended/ruins-l.png" />
       </div>
       <img class ="logo" src="images/others/ruins-logo.png" alt="Ruins logo" />
       <div class="links-ruins">
@@ -39,11 +44,15 @@
     <div id="warrens">
       <h1 class="longh1">Warrens</h1>
       <div class="button-box">
-        <button class="warrensb short">Short</button>
-        <button class="warrensb med">Medium</button>
-        <button class="warrensb long">Long</button>
+        <input type="button" onclick="document.querySelector('.warrenss-image').style.display = 'block'" class="warrensb short" value="Short" />
+        <input type="button" onclick="document.querySelector('.warrensm-image').style.display = 'block'" class="warrensb med" value="Medium" />
+        <input type="button" onclick="document.querySelector('.warrensl-image').style.display = 'block'" class="warrensb long" value="Long" />
+        <input type="button" class="clear" value="Clear" />
       </div>
       <div class="provisions-container">
+        <img class="warrenss-image" src="images/provisions/recommended/warrens-s.png" />
+        <img class="warrensm-image" src="images/provisions/recommended/warrens-m.png" />
+        <img class="warrensl-image" src="images/provisions/recommended/warrens-l.png" />
       </div>
       <img class="logo" src="images/others/warrens-logo.png" alt="Warrens logo" />
       <div class="links-warrens">
@@ -57,11 +66,15 @@
     <div id="weald">
       <h1>Weald</h1>
       <div class="button-box">
-        <button class="wealdb short">Short</button>
-        <button class="wealdb med">Medium</button>
-        <button class="wealdb long">Long</button>
+        <input type="button" onclick="document.querySelector('.wealds-image').style.display = 'block'" class="wealdb short" value="Short" />
+        <input type="button" onclick="document.querySelector('.wealdm-image').style.display = 'block'" class="wealdb med" value="Medium" />
+        <input type="button" onclick="document.querySelector('.wealdl-image').style.display = 'block'" class="wealdb long" value="Long" />
+        <input type="button" class="clear" value="Clear" />
       </div>
       <div class="provisions-container">
+        <img class="wealds-image" src="images/provisions/recommended/weald-s.png" />
+        <img class="wealdm-image" src="images/provisions/recommended/weald-m.png" />
+        <img class="wealdl-image" src="images/provisions/recommended/weald-l.png" />
       </div>
       <img class="logo" src="images/others/weald-logo.png" alt="Weald logo" />
       <div class="links-weald">
@@ -75,11 +88,15 @@
     <div id="cove">
       <h1>Cove</h1>
       <div class="button-box">
-        <button class="coveb short">Short</button>
-        <button class="coveb med">Medium</button>
-        <button class="coveb long">Long</button>
+        <input type="button" onclick="document.querySelector('.coves-image').style.display = 'block'" class="coveb short" value="Short" />
+        <input type="button" onclick="document.querySelector('.covem-image').style.display = 'block'" class="coveb med" value="Medium" />
+        <input type="button" onclick="document.querySelector('.covel-image').style.display = 'block'" class="coveb long" value="Long" />
+        <input type="button" class="clear" value="Clear" />
       </div>
       <div class="provisions-container">
+        <img class="coves-image" src="images/provisions/recommended/cove-s.png" />
+        <img class="covem-image" src="images/provisions/recommended/cove-m.png" />
+        <img class="covel-image" src="images/provisions/recommended/cove-l.png" />
       </div>
       <img class="logo" src="images/others/cove-logo.png" alt="Cove logo" />
       <div class="links-cove">
@@ -93,11 +110,15 @@
     <div id="courtyard">
       <h1 class="longh1">Courtyard</h1>
       <div class="button-box">
-        <button class="courtyardb short">Short</button>
-        <button class="courtyardb med">Medium</button>
-        <button class="courtyardb long">Long</button>
+        <input type="button" onclick="document.querySelector('.courtyards-image').style.display = 'block'" class="courtyardb short" value="Short" />
+        <input type="button" onclick="document.querySelector('.courtyardm-image').style.display = 'block'" class="b med" value="Medium" />
+        <input type="button" onclick="document.querySelector('.courtyardl-image').style.display = 'block'" class="ruinsb long" value="Long" />
+        <input type="button" class="clear" value="Clear" />
       </div>
       <div class="provisions-container">
+        <img class="courtyards-image" src="images/provisions/recommended/courtyard-s.jpg" />
+        <img class="courtyardm-image" src="images/provisions/recommended/courtyard-m.jpg" />
+        <img class="courtyardl-image" src="images/provisions/recommended/courtyard-l.jpg" />
       </div>
       <img class="logo" src="images/others/courtyard-logo.png" alt="Courtyard logo" />
       <div class="links-courtyard">
