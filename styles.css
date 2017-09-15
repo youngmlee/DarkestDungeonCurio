@@ -1,6 +1,7 @@
 * {
   margin: 0;
   font-family: 'Creepster', sans-serif;
+  background-color: #000;
 }
 
 #jumbotron {
@@ -175,20 +176,25 @@ footer {
 }
 
 .curios img {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   margin: auto;
 }
 
 .message {
-  margin-left: 120px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  position: absolute;
   width: 60vw;
   height: 10vh;
   background-color: yellow;
 }
 
 .links {
-  margin-left: 140px;
+  margin-left: 38%;
+}
+
+.msg-text {
+  margin-top: -30px;
+  margin-left: 160px;
+  margin-bottom: 140px;
+  color: white;
 }
