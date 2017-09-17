@@ -66,8 +66,13 @@ footer {
   bottom: 0;
   background-color: #000;
   text-align: center;
-  width: 400px;
+  width: 700px;
   height: 30px;
+}
+
+.links-main p {
+  font-size: 2em;
+  color: #400000;
 }
 
 #ruins {
