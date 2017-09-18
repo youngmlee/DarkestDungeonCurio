@@ -38,10 +38,12 @@ h2 {
 }
 
 footer {
-  width: 80%;
+  width: 90%;
   height: 10px;
   margin: 0 auto;
   background-color: #1c1c1c;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 #main {
@@ -50,6 +52,8 @@ footer {
   margin: 0 auto;
   background-color: #000;
   font-family: 'Pirata One', sans-serif;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 .characterl {
@@ -112,6 +116,8 @@ footer {
   padding-top: 100px;
   padding-bottom: 200px;
   background-color: #000;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 #warrens {
@@ -121,6 +127,8 @@ footer {
   padding-top: 100px;
   padding-bottom: 200px;
   background-color: #000;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 #weald {
@@ -130,6 +138,8 @@ footer {
   padding-top: 100px;
   padding-bottom: 200px;
   background-color: #000;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 #cove {
@@ -139,6 +149,8 @@ footer {
   padding-top: 100px;
   padding-bottom: 200px;
   background-color: #000;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 #courtyard {
@@ -148,6 +160,8 @@ footer {
   padding-top: 100px;
   padding-bottom: 200px;
   background-color: #000;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 .button-box {
