@@ -7,9 +7,60 @@ $(document).ready(function() {
 $('.curios img').hover(function() {
     $(this).data('original', this.src)
     this.src = $(this).attr('data-id-prov')
-  }, function() {
+    var msg = $(this).attr('data-message')
+    var $ruinsMsg = document.querySelector('.ruins-msg')
+    $ruinsMsg.textContent = msg
+    var $warrensMsg = document.querySelector('.warrens-msg')
+    $warrensMsg.textContent = msg
+    var $wealdMsg = document.querySelector('.weald-msg')
+    $wealdMsg.textContent = msg
+    var $coveMsg = document.querySelector('.cove-msg')
+    $coveMsg.textContent = msg
+    var $courtyardMsg = document.querySelector('.courtyard-msg')
+    $courtyardMsg.textContent = msg
+  },
+  function() {
     this.src = $(this).data('original')
-  })
+})
+
+/*
+var curios = [
+  {
+    id: '1',
+    src: 'images/curios/all/crate.png',
+    prov-src: 'images/provisions/no-action.png',
+    message: 'Heirloom(75%) Nothing(25%)'
+  },
+  {
+    id: '2',
+    src: 'images/curios/all/discarded-pack.png',
+    prov-src: 'images/provisions/no-action.png',
+    message: 'Supplies x1 + Gold/Gems x2 + Journal Entry(60%) Scouting(20%) Nothing(20%)'
+  }
+]
+
+function findObjById (id, array) {
+  for (var i = 0; i < array.length; i++) {
+    var obj1 = array[i]
+    if (id === obj1.id) {
+      return obj1
+    }
+  }
+}
+
+<!-- <img data-id='1' src='images/curios/all/crate.png'/> -->
+
+$('.curios img').hover(function() {
+    var id1 = $(this).attr('data-id')
+    findObjById(id1, curios)
+    $(this).data('original', this.src)
+    this.src = obj1.prov-src
+  },
+  function() {
+    this.src = $(this).data('original')
+})
+
+*/
 
 var $clear = document.querySelectorAll('.clear')
 
