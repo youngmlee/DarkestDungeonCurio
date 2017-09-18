@@ -52,7 +52,31 @@ footer {
   font-family: 'Pirata One', sans-serif;
 }
 
-#main img {
+.characterl {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 700px;
+  bottom: 50px;
+  width: 250px;
+  height: 400px;
+  z-index: 2;
+}
+
+.characterr {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 700px;
+  right: 0;
+  bottom: 50px;
+  width: 250px;
+  height: 400px;
+  z-index: 2;
+}
+
+.dd-logo {
   position: absolute;
   margin: auto;
   top: 0;
@@ -217,7 +241,7 @@ footer {
   margin-left: 160px;
   margin-bottom: 140px;
   font-family: 'Cinzel Decorative';
-  color: yellow;
+  color: #bd9b21;
 }
 
 ul {

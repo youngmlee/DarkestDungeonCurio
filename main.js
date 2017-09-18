@@ -8,16 +8,10 @@ $('.curios img').hover(function() {
     $(this).data('original', this.src)
     this.src = $(this).attr('data-id-prov')
     var msg = $(this).attr('data-message')
-    var $ruinsMsg = document.querySelector('.ruins-msg')
-    $ruinsMsg.textContent = msg
-    var $warrensMsg = document.querySelector('.warrens-msg')
-    $warrensMsg.textContent = msg
-    var $wealdMsg = document.querySelector('.weald-msg')
-    $wealdMsg.textContent = msg
-    var $coveMsg = document.querySelector('.cove-msg')
-    $coveMsg.textContent = msg
-    var $courtyardMsg = document.querySelector('.courtyard-msg')
-    $courtyardMsg.textContent = msg
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = msg
+    }
   },
   function() {
     this.src = $(this).data('original')
@@ -55,6 +49,11 @@ $('.curios img').hover(function() {
     findObjById(id1, curios)
     $(this).data('original', this.src)
     this.src = obj1.prov-src
+    var msg = obj1.message
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = msg
+    }
   },
   function() {
     this.src = $(this).data('original')
