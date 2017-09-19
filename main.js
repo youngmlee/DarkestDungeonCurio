@@ -11,6 +11,24 @@ $('.curios img').hover(function() {
     var $msg = document.querySelectorAll('.msg')
     for (var i = 0; i < $msg.length; i++) {
       $msg[i].textContent = msg
+      if (msg.indexOf('Gold') !== -1) {
+        $msg[i].style.color = "yellow"
+      }
+      else if (msg.indexOf('Quirk') !== -1) {
+        $msg[i].style.color = "purple"
+      }
+      else if (msg.indexOf('Buff') !== -1) {
+        $msg[i].style.color = "blue"
+      }
+      else if (msg.indexOf('Stress Heal') !== -1) {
+        $msg[i].style.color = "#88b04b"
+      }
+      else if (msg.indexOf('Heirloom') !== -1) {
+        $msg[i].style.color = "lightblue"
+      }
+      else {
+        $msg[i].style.color = "white"
+      }
     }
   },
   function() {
@@ -18,8 +36,8 @@ $('.curios img').hover(function() {
     var $msg = document.querySelectorAll('.msg')
     for (var i = 0; i < $msg.length; i++) {
       $msg[i].textContent = ''
-    }
-  })
+  }
+})
 
 
 /*
