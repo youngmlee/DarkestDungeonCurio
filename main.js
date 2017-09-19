@@ -132,7 +132,7 @@ var curios = [
   },
   {
     id: '10',
-    src: 'images/curios/all/unlocked-strongbox.jpg',
+    src: 'images/curios/all/locked-strongbox.png',
     provsrc: 'images/provisions/no-action.png',
     message: 'Any Loot x2(75%) Blight(25%)'
   },
@@ -366,25 +366,25 @@ var curios = [
   },
   {
     id: '49',
-    src: 'images/curios/courtyard/bloodflowers.png',
+    src: 'images/curios/courtyard/bloodflowers.jpg',
     provsrc: 'images/provisions/shovel.png',
     message: 'Gems/Heirlooms x2(66.7%) Any Loot x1(33.3%)'
   },
   {
     id: '50',
-    src: 'images/curios/courtyard/damned-fountain.png',
+    src: 'images/curios/courtyard/damned-fountain.jpg',
     provsrc: 'images/provisions/holy-water.png',
     message: 'Stress Heal 30'
   },
   {
     id: '51',
-    src: 'images/curios/courtyard/disturbing-diversion.png',
+    src: 'images/curios/courtyard/disturbing-diversion.jpg',
     provsrc: 'images/provisions/shovel.png',
     message: 'Heirlooms x3'
   },
   {
     id: '52',
-    src: 'images/curios/courtyard/forgotten-delicacies.png',
+    src: 'images/curios/courtyard/forgotten-delicacies.jpg',
     provsrc: 'images/provisions/medicinal-herbs.png',
     message: 'Food x2 + Gold/Supplies x1'
   },
@@ -396,25 +396,25 @@ var curios = [
   },
   {
     id: '54',
-    src: 'images/curios/courtyard/pile-of-strange-bones.png',
+    src: 'images/curios/courtyard/pile-of-strange-bones.jpg',
     provsrc: 'images/provisions/bandage.png',
     message: 'Any Loot x1(50%) The Blood(50%)'
   },
   {
     id: '55',
-    src: 'images/curios/courtyard/throbbing-coccoons.png',
+    src: 'images/curios/courtyard/throbbing-coccoons.jpg',
     provsrc: 'images/provisions/torch.png',
     message: 'Stress Heal 30'
   },
   {
     id: '56',
-    src: 'images/curios/courtyard/thronging-hive.png',
+    src: 'images/curios/courtyard/thronging-hive.jpg',
     provsrc: 'images/provisions/torch.png',
     message: 'Any Loot x3'
   },
   {
     id: '57',
-    src: 'images/curios/courtyard/wine-crate.png',
+    src: 'images/curios/courtyard/wine-crate.jpg',
     provsrc: 'images/provisions/antivenom-shovel.png',
     message: 'Antivenom: Stress Heal 30. Shovel: Firewood'
   }
