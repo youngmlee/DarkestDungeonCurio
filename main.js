@@ -4,6 +4,8 @@ $(document).ready(function() {
   console.log('Ready!')
 })
 
+$('body').bind('touchstart', function() {})
+
 function findObjById (id, array) {
   for (var i = 0; i < array.length; i++) {
     var arrObj = array[i]
