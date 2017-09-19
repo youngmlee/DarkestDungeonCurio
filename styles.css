@@ -1,6 +1,7 @@
 * {
   margin: 0;
   font-family: 'Creepster', sans-serif;
+  background-color: #000;
 }
 
 #jumbotron {
@@ -65,31 +66,21 @@ footer {
   bottom: 0;
   background-color: #000;
   text-align: center;
-  width: 400px;
+  width: 700px;
   height: 30px;
 }
 
-.links-ruins,
-.links-warrens,
-.links-weald,
-.links-cove,
-.links-courtyard {
-  position: relative;
-  margin: auto;
-  top: 250px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000;
-  text-align: center;
-  width: 400px;
-  height: 30px;
+.links-main p {
+  font-size: 2em;
+  color: #400000;
 }
 
 #ruins {
   width: 80%;
   height: 600px;
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000;
 }
 
@@ -97,6 +88,8 @@ footer {
   width: 80%;
   height: 600px;
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000;
 }
 
@@ -104,6 +97,8 @@ footer {
   width: 80%;
   height: 600px;
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000;
 }
 
@@ -111,6 +106,8 @@ footer {
   width: 80%;
   height: 600px;
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000;
 }
 
@@ -118,29 +115,23 @@ footer {
   width: 80%;
   height: 600px;
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000;
 }
 
-.logo {
-  position: relative;
-  top: 0;
-  left: 110px;
-  display: block;
-  width: 200px;
-  height: 120px;
-}
-
 .button-box {
-  margin-left: 30px;
+  margin-left: 20px;
   display: inline-block;
 }
 
-.ruinsb,
-.warrensb,
-.wealdb,
-.coveb,
-.courtyardb {
+.button-box input {
   display: block;
+}
+
+.logo {
+  display: block;
+  margin-left: 80px;
 }
 
 .short {
@@ -156,18 +147,17 @@ footer {
 }
 
 .provisions-container {
-  position: relative;
-  top: 40px;
-  margin-left: 30px;
-  display: inline-block;
   width: 320px;
-  height: 160px;
+  height: 150px;
+  margin-left: 30px;
+  margin-bottom: -30px;
+  display: inline-block;
 }
 
 .provisions-container img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 150px;
   display: none;
 }
 
@@ -177,14 +167,13 @@ footer {
 }
 
 .curios {
-  position: relative;
-  bottom: 120px;
-  left: 330px;
-  display: block;
+  position: absolute;
 }
 
 .curios table {
   position: absolute;
+  left: 420px;
+  bottom: 40px;
 }
 
 .curios td {
@@ -192,7 +181,25 @@ footer {
 }
 
 .curios img {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   margin: auto;
+}
+
+.message {
+  position: absolute;
+  width: 60vw;
+  height: 10vh;
+  background-color: yellow;
+}
+
+.links {
+  margin-left: 38%;
+}
+
+.msg-text {
+  margin-top: -30px;
+  margin-left: 160px;
+  margin-bottom: 140px;
+  color: white;
 }
