@@ -7,9 +7,82 @@ $(document).ready(function() {
 $('.curios img').hover(function() {
     $(this).data('original', this.src)
     this.src = $(this).attr('data-id-prov')
-  }, function() {
+    var msg = $(this).attr('data-message')
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = msg
+      if (msg.indexOf('Gold') !== -1) {
+        $msg[i].style.color = "yellow"
+      }
+      else if (msg.indexOf('Quirk') !== -1) {
+        $msg[i].style.color = "purple"
+      }
+      else if (msg.indexOf('Buff') !== -1) {
+        $msg[i].style.color = "blue"
+      }
+      else if (msg.indexOf('Stress Heal') !== -1) {
+        $msg[i].style.color = "#88b04b"
+      }
+      else if (msg.indexOf('Heirloom') !== -1) {
+        $msg[i].style.color = "lightblue"
+      }
+      else {
+        $msg[i].style.color = "white"
+      }
+    }
+  },
+  function() {
     this.src = $(this).data('original')
-  })
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = ''
+  }
+})
+
+
+/*
+var curios = [
+  {
+    id: '1',
+    src: 'images/curios/all/crate.png',
+    prov-src: 'images/provisions/no-action.png',
+    message: 'Heirloom(75%) Nothing(25%)'
+  },
+  {
+    id: '2',
+    src: 'images/curios/all/discarded-pack.png',
+    prov-src: 'images/provisions/no-action.png',
+    message: 'Supplies x1 + Gold/Gems x2 + Journal Entry(60%) Scouting(20%) Nothing(20%)'
+  }
+]
+
+function findObjById (id, array) {
+  for (var i = 0; i < array.length; i++) {
+    var obj1 = array[i]
+    if (id === obj1.id) {
+      return obj1
+    }
+  }
+}
+
+<!-- <img data-id='1' src='images/curios/all/crate.png'/> -->
+
+$('.curios img').hover(function() {
+    var id1 = $(this).attr('data-id')
+    findObjById(id1, curios)
+    $(this).data('original', this.src)
+    this.src = obj1.prov-src
+    var msg = obj1.message
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = msg
+    }
+  },
+  function() {
+    this.src = $(this).data('original')
+})
+
+*/
 
 var $clear = document.querySelectorAll('.clear')
 
