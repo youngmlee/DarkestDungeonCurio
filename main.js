@@ -15,7 +15,12 @@ $('.curios img').hover(function() {
   },
   function() {
     this.src = $(this).data('original')
-})
+    var $msg = document.querySelectorAll('.msg')
+    for (var i = 0; i < $msg.length; i++) {
+      $msg[i].textContent = ''
+    }
+  })
+
 
 /*
 var curios = [
