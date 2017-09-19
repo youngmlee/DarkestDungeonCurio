@@ -4,10 +4,21 @@ $(document).ready(function() {
   console.log('Ready!')
 })
 
+function findObjById (id, array) {
+  for (var i = 0; i < array.length; i++) {
+    var arrObj = array[i]
+    if (id === arrObj.id) {
+      return arrObj
+    }
+  }
+}
+
 $('.curios img').hover(function() {
     $(this).data('original', this.src)
-    this.src = $(this).attr('data-id-prov')
-    var msg = $(this).attr('data-message')
+    var dataId = $(this).attr('data-id')
+    var foundObj = findObjById(dataId, curios)
+    this.src = foundObj.provsrc
+    var msg = foundObj.message
     var $msg = document.querySelectorAll('.msg')
     for (var i = 0; i < $msg.length; i++) {
       $msg[i].textContent = msg
@@ -15,16 +26,19 @@ $('.curios img').hover(function() {
         $msg[i].style.color = "yellow"
       }
       else if (msg.indexOf('Quirk') !== -1) {
-        $msg[i].style.color = "purple"
+        $msg[i].style.color = "#a819ff"
       }
       else if (msg.indexOf('Buff') !== -1) {
-        $msg[i].style.color = "blue"
+        $msg[i].style.color = "#0042ff"
       }
       else if (msg.indexOf('Stress Heal') !== -1) {
         $msg[i].style.color = "#88b04b"
       }
       else if (msg.indexOf('Heirloom') !== -1) {
         $msg[i].style.color = "lightblue"
+      }
+      else if (msg.indexOf('Torch') !== -1) {
+        $msg[i].style.color = "#fa540a"
       }
       else {
         $msg[i].style.color = "white"
@@ -38,51 +52,6 @@ $('.curios img').hover(function() {
       $msg[i].textContent = ''
   }
 })
-
-
-/*
-var curios = [
-  {
-    id: '1',
-    src: 'images/curios/all/crate.png',
-    prov-src: 'images/provisions/no-action.png',
-    message: 'Heirloom(75%) Nothing(25%)'
-  },
-  {
-    id: '2',
-    src: 'images/curios/all/discarded-pack.png',
-    prov-src: 'images/provisions/no-action.png',
-    message: 'Supplies x1 + Gold/Gems x2 + Journal Entry(60%) Scouting(20%) Nothing(20%)'
-  }
-]
-
-function findObjById (id, array) {
-  for (var i = 0; i < array.length; i++) {
-    var obj1 = array[i]
-    if (id === obj1.id) {
-      return obj1
-    }
-  }
-}
-
-<!-- <img data-id='1' src='images/curios/all/crate.png'/> -->
-
-$('.curios img').hover(function() {
-    var id1 = $(this).attr('data-id')
-    findObjById(id1, curios)
-    $(this).data('original', this.src)
-    this.src = obj1.prov-src
-    var msg = obj1.message
-    var $msg = document.querySelectorAll('.msg')
-    for (var i = 0; i < $msg.length; i++) {
-      $msg[i].textContent = msg
-    }
-  },
-  function() {
-    this.src = $(this).data('original')
-})
-
-*/
 
 var $clear = document.querySelectorAll('.clear')
 
@@ -106,404 +75,347 @@ for (var i = 0; i < $clear.length; i++) {
   },)
 }
 
-var provisionsList = [
+var curios = [
   {
-    name: 'antivenom',
     id: '1',
-    src: 'images/provisions/antivenom.png'
+    src: 'images/curios/all/crate.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Heirloom(75%) Nothing(25%)'
   },
   {
-    name: 'bandage',
     id: '2',
-    src: 'images/provisions/bandage.png'
+    src: 'images/curios/all/discarded-pack.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Supplies x1 + Gold/Gems x2 + Journal Entry(60%) Scouting(20%) Nothing(20%)'
   },
   {
-    name: 'holy-water',
     id: '3',
-    src: 'images/provisions/holy-water.png'
+    src: 'images/curios/all/eldritch-altar.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Purge Negative Quirk'
   },
   {
-    name: 'medicinal-herbs',
     id: '4',
-    src: 'images/provisions/medicinal-herbs.png'
+    src: 'images/curios/all/heirloom-chest.png',
+    provsrc: 'images/provisions/skeleton-key.png',
+    message: 'Heirlooms x4'
   },
   {
-    name: 'no-action',
     id: '5',
-    src: 'images/provisions/no-action.png'
+    src: 'images/curios/all/locked-strongbox.png',
+    provsrc: 'images/provisions/shovel-key.png',
+    message: 'Key: Any Loot x3. Shovel: Any Loot x2(66.7%) Nothing(33.3%)'
   },
   {
-    name: 'shovel',
     id: '6',
-    src: 'images/provisions/shovel.png'
+    src: 'images/curios/all/sack.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Gold(75%) Nothing(25%)'
   },
   {
-    name: 'skeleton-key',
     id: '7',
-    src: 'images/provisions/skeleton-key.png'
+    src: 'images/curios/all/sconce.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Torch x1'
   },
   {
-    name: 'the-blood',
     id: '8',
-    src: 'images/provisions/the-blood.png'
+    src: 'images/curios/all/shamblers-altar.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Summon Shambler by using Torch (Warning: Be Prepared)'
   },
   {
-    name: 'torch',
     id: '9',
-    src: 'images/provisions/torch.png'
+    src: 'images/curios/all/stack-of-books.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Stress +25 OR Random Positive Quirk(22.2%) Journal Entry OR Nothing(16.7%) Random Negative Quirk OR Decrease Light 25(11.1%)'
   },
   {
-    name: 'shovel-key',
     id: '10',
-    src: 'images/provisions/shovel-key.png'
+    src: 'images/curios/all/unlocked-strongbox.jpg',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Any Loot x2(75%) Blight(25%)'
   },
   {
-    name: 'antivenom-key',
     id: '11',
-    src: 'images/provisions/antivenom-key.png'
+    src: 'images/curios/ruins/alchemy-table.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Gold/Gems x2'
   },
   {
-    name: 'antivenom-shovel',
     id: '12',
-    src: 'images/provisions/antivenom-shovel.png'
-  }
-]
-
-var curiosList = [
-  {
-    name: 'crate',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/crate.png'
+    src: 'images/curios/ruins/altar-of-light.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Buff DMG +30% Until Camp'
   },
   {
-    name: 'discarded-pack',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/discarded-pack.png'
+    id: '13',
+    src: 'images/curios/ruins/bookshelf.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Scouting OR Stress +15 OR Journal Entry OR Nothing(20%) Positive Quirk(13.3%) Negative Quirk(6.7%)'
   },
   {
-    name: 'eldritch-altar',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/all/eldritch-altar.png'
+    id: '14',
+    src: 'images/curios/ruins/confession-booth.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Stress Heal 30'
   },
   {
-    name: 'heirloom-chest',
-    prov: 'skeleton-key',
-    id: '7',
-    src: 'images/curios/all/heirloom-chest.png'
+    id: '15',
+    src: 'images/curios/ruins/decorative-urn.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Gold/Trinket x2 + Gems x2'
   },
   {
-    name: 'locked-strongbox',
-    prov: 'skeleton-key',
-    id: '7',
-    src: 'images/curios/all/locked-strongbox.png'
+    id: '16',
+    src: 'images/curios/ruins/holy-fountain.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Stress Heal 20, Cure Status Effects, Heal 12 HP'
   },
   {
-    name: 'sack',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/sack.png'
+    id: '17',
+    src: 'images/curios/ruins/iron-maiden.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Any Loot x2'
   },
   {
-    name: 'sconce',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/sconce.png'
+    id: '18',
+    src: 'images/curios/ruins/locked-display-cabinet.png',
+    provsrc: 'images/provisions/shovel-key.png',
+    message: 'Key: Gold/Heirlooms x3 + Gold/Gems x2. Shovel: Gold/Heirlooms x2 + Gold/Gems x2'
   },
   {
-    name: 'shamblers-altar',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/shamblers-altar.png'
+    id: '19',
+    src: 'images/curios/ruins/locked-sarcophagus.png',
+    provsrc: 'images/provisions/shovel-key.png',
+    message: 'Key: Gold/Heirlooms x2 + Gold/Gems x1. Shovel: Gold/Heirlooms x1 + Gold/Gems x1'
   },
   {
-    name: 'stack-of-books',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/all/stack-of-books.png'
+    id: '20',
+    src: 'images/curios/ruins/sarcophagus.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Gold/Heirlooms x2(60%) Negative Quirk: Thanatophobia OR Nothing(20%)'
   },
   {
-    name: 'alchemy-table',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/ruins/alchemy-table.png'
+    id: '21',
+    src: 'images/curios/ruins/suit-of-armor.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Buff PROT/DODGE +10 Until Camp(75%) Positive Quirk: Ruins Adventurer OR Positive Quirk: Ruins Tactician(12.5%)'
   },
   {
-    name: 'altar-of-light',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/ruins/altar-of-light.png'
+    id: '22',
+    src: 'images/curios/warrens/bone-altar.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Buff +15% DMG, +10 ACC, +5% CRT Until Camp, Cure Status Effects'
   },
   {
-    name: 'bookshelf',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/ruins/bookshelf.png'
+    id: '23',
+    src: 'images/curios/warrens/dinner-cart.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Food x3 + Gold/Trinket x1'
   },
   {
-    name: 'confession-booth',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/ruins/confession-booth.png'
+    id: '24',
+    src: 'images/curios/warrens/makeshift-dining-table.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Food x2 + Gold/Supplies x1'
   },
   {
-    name: 'decorative-urn',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/ruins/decorative-urn.png'
+    id: '25',
+    src: 'images/curios/warrens/moonshine-barrel.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Buff +30% DMG (until camp)'
   },
   {
-    name: 'holy-fountain',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/ruins/holy-fountain.png'
+    id: '26',
+    src: 'images/curios/warrens/occult-scrawlings.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Random Positive Quirk(33.3%) Stress +25 OR Nothing(25%) Random Negative Quirk(16.7%)'
   },
   {
-    name: 'iron-maiden',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/ruins/iron-maiden.png'
+    id: '27',
+    src: 'images/curios/warrens/pile-of-bones.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Any Loot x2'
   },
   {
-    name: 'locked-display-cabinet',
-    prov: 'shovel-key',
-    id: '10',
-    src: 'images/curios/ruins/locked-display-cabinet.png'
+    id: '28',
+    src: 'images/curios/warrens/pile-of-scrolls.png',
+    provsrc: 'images/provisions/torch.png',
+    message: 'Purge Negative Quirk'
   },
   {
-    name: 'locked-sarcophagus',
-    prov: 'shovel-key',
-    id: '10',
-    src: 'images/curios/ruins/locked-sarcophagus.png'
+    id: '29',
+    src: 'images/curios/warrens/rack-of-blades.png',
+    provsrc: 'images/provisions/bandage.png',
+    message: 'Gold/Gems x2 + Food x1'
   },
   {
-    name: 'sarcophagus',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/ruins/sarcophagus.png'
+    id: '30',
+    src: 'images/curios/warrens/sacrificial-stone.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Stress +50(50%) Purge Negative Quirk(25%) Positive Quirk: Warrens Explorer/Scrounger(12.5%)'
   },
   {
-    name: 'suit-of-armor',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/ruins/suit-of-armor.png'
+    id: '31',
+    src: 'images/curios/weald/ancient-coffin.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Gold/Heirlooms x2(50%) Nothing(33.3%) Positive Quirk: Weald Adventurer/Explorer(8.3%)'
   },
   {
-    name: 'bone-altar',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/warrens/bone-altar.png'
+    id: '32',
+    src: 'images/curios/weald/beast-carcass.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Food x2'
   },
   {
-    name: 'dinner-cart',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/warrens/dinner-cart.png'
+    id: '33',
+    src: 'images/curios/weald/eerie-spiderweb.png',
+    provsrc: 'images/provisions/bandage.png',
+    message: 'Gold/Gems x2 + Gems/Trinket x1'
   },
   {
-    name: 'makeshift-dining-table',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/warrens/makeshift-dining-table.png'
+    id: '34',
+    src: 'images/curios/weald/left-luggage.png',
+    provsrc: 'images/provisions/antivenom-key.png',
+    message: 'Any Loot x3'
   },
   {
-    name: 'moonshine-barrel',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/warrens/moonshine-barrel.png'
+    id: '35',
+    src: 'images/curios/weald/mummified-remains.png',
+    provsrc: 'images/provisions/bandage.png',
+    message: 'Gold/Trinkets x2'
   },
   {
-    name: 'occult-scrawlings',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/warrens/occult-scrawlings.png'
+    id: '36',
+    src: 'images/curios/weald/old-tree.png',
+    provsrc: 'images/provisions/antivenom.png',
+    message: 'Any Loot x3'
   },
   {
-    name: 'pile-of-bones',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/warrens/pile-of-bones.png'
+    id: '37',
+    src: 'images/curios/weald/pristine-fountain.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Stress Heal 30'
   },
   {
-    name: 'pile-of-scrolls',
-    prov: 'torch',
-    id: '9',
-    src: 'images/curios/warrens/pile-of-scrolls.png'
+    id: '38',
+    src: 'images/curios/weald/shallow-grave.png',
+    provsrc: 'images/provisions/shovel.png',
+    message: 'Gems/Heirlooms x3'
   },
   {
-    name: 'rack-of-blades',
-    prov: 'bandage',
-    id: '2',
-    src: 'images/curios/warrens/rack-of-blades.png'
+    id: '39',
+    src: 'images/curios/weald/travellers-tent.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Scouting OR Gold/Supplies x4 + Gold/Heirlooms x4 + Journal Entry(37.5%) Stress +25 OR Nothing(12.5%)'
   },
   {
-    name: 'sacrificial-stone',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/warrens/sacrificial-stone.png'
+    id: '40',
+    src: 'images/curios/weald/troubling-effigy.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Random Positive Quirk'
   },
   {
-    name: 'ancient-coffin',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/weald/ancient-coffin.png'
+    id: '41',
+    src: 'images/curios/cove/barnacle-crusted-chest.png',
+    provsrc: 'images/provisions/shovel.png',
+    message: 'Any Loot x3'
   },
   {
-    name: 'beast-carcass',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/weald/beast-carcass.png'
+    id: '42',
+    src: 'images/curios/cove/bas-relief.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Positive Quirk(66.7%) Negative Quirk(22.2%) Disease(11.1%)'
   },
   {
-    name: 'eerie-spiderweb',
-    prov: 'bandage',
-    id: '2',
-    src: 'images/curios/weald/eerie-spiderweb.png'
+    id: '43',
+    src: 'images/curios/cove/brackish-tidepool.png',
+    provsrc: 'images/provisions/antivenom.png',
+    message: 'Heal 5 HP and Cure(50%) Stress Heal 5(50%)'
   },
   {
-    name: 'left-luggage',
-    prov: 'antivenom-key',
-    id: '11',
-    src: 'images/curios/weald/left-luggage.png'
+    id: '44',
+    src: 'images/curios/cove/eerie-coral.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Purge Negative Quirk'
   },
   {
-    name: 'mummified-remains',
-    prov: 'bandage',
-    id: '2',
-    src: 'images/curios/weald/mummified-remains.png'
+    id: '45',
+    src: 'images/curios/cove/fish-idol.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Buff +18% DMG until Camp(50%)'
   },
   {
-    name: 'old-tree',
-    prov: 'antivenom',
-    id: '1',
-    src: 'images/curios/weald/old-tree.png'
+    id: '46',
+    src: 'images/curios/cove/giant-fish-carcass.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Gems/Trinkets x2 + Gem/Gold x1 + Supplies x2'
   },
   {
-    name: 'pristine-fountain',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/weald/pristine-fountain.png'
+    id: '47',
+    src: 'images/curios/cove/giant-oyster.png',
+    provsrc: 'images/provisions/shovel.png',
+    message: 'Gold/Trinkets x3'
   },
   {
-    name: 'shallow-grave',
-    prov: 'shovel',
-    id: '6',
-    src: 'images/curios/weald/shallow-grave.png'
+    id: '48',
+    src: 'images/curios/cove/ships-figurehead.png',
+    provsrc: 'images/provisions/no-action.png',
+    message: 'Stress Heal 25(66.7%) Buff +20% DMG, +4 SPD Until Camp(33.3%)'
   },
   {
-    name: 'travellers-tent',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/weald/travellers-tent.png'
+    id: '49',
+    src: 'images/curios/courtyard/bloodflowers.png',
+    provsrc: 'images/provisions/shovel.png',
+    message: 'Gems/Heirlooms x2(66.7%) Any Loot x1(33.3%)'
   },
   {
-    name: 'troubling-effigy',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/weald/troubling-effigy.png'
+    id: '50',
+    src: 'images/curios/courtyard/damned-fountain.png',
+    provsrc: 'images/provisions/holy-water.png',
+    message: 'Stress Heal 30'
   },
   {
-    name: 'barnacle-crusted-chest',
-    prov: 'shovel',
-    id: '6',
-    src: 'images/curios/cove/barnacle-crusted-chest.png'
+    id: '51',
+    src: 'images/curios/courtyard/disturbing-diversion.png',
+    provsrc: 'images/provisions/shovel.png',
+    message: 'Heirlooms x3'
   },
   {
-    name: 'bas-relief',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/cove/bas-relief.png'
+    id: '52',
+    src: 'images/curios/courtyard/forgotten-delicacies.png',
+    provsrc: 'images/provisions/medicinal-herbs.png',
+    message: 'Food x2 + Gold/Supplies x1'
   },
   {
-    name: 'brackish-tidepool',
-    prov: 'antivenom',
-    id: '1',
-    src: 'images/curios/cove/brackish-tidepool.png'
+    id: '53',
+    src: 'images/curios/courtyard/hooded-shrew.png',
+    provsrc: 'images/provisions/the-blood.png',
+    message: 'Any Loot x2'
   },
   {
-    name: 'eerie-coral',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/cove/eerie-coral.png'
+    id: '54',
+    src: 'images/curios/courtyard/pile-of-strange-bones.png',
+    provsrc: 'images/provisions/bandage.png',
+    message: 'Any Loot x1(50%) The Blood(50%)'
   },
   {
-    name: 'fish-idol',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/cove/fish-idol.png'
+    id: '55',
+    src: 'images/curios/courtyard/throbbing-coccoons.png',
+    provsrc: 'images/provisions/torch.png',
+    message: 'Stress Heal 30'
   },
   {
-    name: 'giant-fish-carcass',
-    prov: 'medicinal-herbs',
-    id: '4',
-    src: 'images/curios/cove/giant-fish-carcass.png'
+    id: '56',
+    src: 'images/curios/courtyard/thronging-hive.png',
+    provsrc: 'images/provisions/torch.png',
+    message: 'Any Loot x3'
   },
   {
-    name: 'giant-oyster',
-    prov: 'shovel',
-    id: '6',
-    src: 'images/curios/cove/giant-oyster.png'
-  },
-  {
-    name: 'ships-figurehead',
-    prov: 'no-action',
-    id: '5',
-    src: 'images/curios/cove/ships-figurehead.png'
-  },
-  {
-    name: 'bloodflowers',
-    prov: 'shovel',
-    id: '6',
-    src: 'images/curios/courtyard/bloodflowers.png'
-  },
-  {
-    name: 'damned-fountain',
-    prov: 'holy-water',
-    id: '3',
-    src: 'images/curios/courtyard/damned-fountain.png'
-  },
-  {
-    name: 'disturbing-diversion',
-    prov: 'shovel',
-    id: '6',
-    src: 'images/curios/courtyard/disturbing-diversion.png'
-  },
-  {
-    name: 'forgotten-delicacies',
-    prov: 'medicinal-herbs',
-    id: '3',
-    src: 'images/curios/courtyard/forgotten-delicacies.png'
-  },
-  {
-    name: 'hooded-shrew',
-    prov: 'the-blood',
-    id: '8',
-    src: 'images/curios/courtyard/hooded-shrew.png'
-  },
-  {
-    name: 'pile-of-strange-bones',
-    prov: 'bandage',
-    id: '2',
-    src: 'images/curios/courtyard/pile-of-strange-bones.png'
-  },
-  {
-    name: 'throbbing-coccoons',
-    prov: 'torch',
-    id: '9',
-    src: 'images/curios/courtyard/throbbing-coccoons.png'
-  },
-  {
-    name: 'thronging-hive',
-    prov: 'torch',
-    id: '9',
-    src: 'images/curios/courtyard/thronging-hive.png'
-  },
-  {
-    name: 'wine-crate',
-    prov: 'antivenom-shovel',
-    id: '12',
-    src: 'images/curios/courtyard/wine-crate.png'
+    id: '57',
+    src: 'images/curios/courtyard/wine-crate.png',
+    provsrc: 'images/provisions/antivenom-shovel.png',
+    message: 'Antivenom: Stress Heal 30. Shovel: Firewood'
   }
 ]
