@@ -11,14 +11,7 @@
   position: relative;
 }
 
-h1 {
-  display: inline-block;
-  margin-top: 70px;
-  margin-left: 140px;
-  font-size: 4em;
-}
-
-.longh2 {
+h2 {
   display: inline-block;
   margin-top: 70px;
   margin-left: 110px;
@@ -104,9 +97,17 @@ footer {
   height: 30px;
 }
 
-.links-main p {
+.adventure {
   font-size: 2em;
   color: gold;
+}
+
+.intro {
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: 0.8em;
+  color: white;
+  font-family: 'Cinzel', sans-serif;
 }
 
 #ruins,
