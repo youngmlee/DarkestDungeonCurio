@@ -7,101 +7,79 @@
   background-color: #1c1c1c;
 }
 
-#jumbotron > #main {
-  position: relative;
-}
-
-h2 {
-  display: inline-block;
-  margin-top: 70px;
-  margin-left: 110px;
-  font-size: 4em;
-  text-decoration: none;
-  font-family: 'Pirata One', sans-serif;
-  color: maroon;
-}
-
-.longh2 {
-  display: inline-block;
-  margin-top: 70px;
-  margin-left: 80px;
-  font-size: 4em;
-  text-decoration: none;
-  font-family: 'Pirata One', sans-serif;
-  color: maroon;
-}
-
-a {
-  text-decoration: none;
-  font-family: 'Pirata One', sans-serif;
-  color: maroon;
-}
-
-footer {
-  width: 90%;
-  height: 10px;
-  margin: 0 auto;
-  background-color: #1c1c1c;
-  border-left: thick #bd9b21 double;
-  border-right: thick #bd9b21 double;
-}
-
 #main {
   width: 90%;
-  height: 800px;
+  height: 1100px;
   margin: 0 auto;
-  background-color: #000;
   font-family: 'Pirata One', sans-serif;
+  background-color: #000;
   border-left: thick #bd9b21 double;
   border-right: thick #bd9b21 double;
 }
 
 .characterl {
   position: absolute;
-  margin: auto;
   top: -100px;
   left: 0;
   right: 700px;
   bottom: 50px;
+  z-index: 2;
   width: 250px;
   height: 400px;
-  z-index: 2;
+  margin: auto;
 }
 
 .characterr {
   position: absolute;
-  margin: auto;
   top: -100px;
   left: 700px;
   right: 0;
   bottom: 50px;
+  z-index: 2;
   width: 250px;
   height: 400px;
-  z-index: 2;
+  margin: auto;
 }
 
 .dd-logo {
   position: absolute;
-  margin: auto;
   top: -100px;
   left: 0;
   right: 0;
   bottom: 180px;
   width: 500px;
   height: 200px;
+  margin: auto;
 }
 
 .links-main {
   position: absolute;
-  margin: auto;
   top: -100px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000;
-  text-align: center;
   width: 700px;
   height: 30px;
+  margin: auto;
+  text-align: center;
+  background-color: #000;
+}
+
+.intro {
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: 0.8em;
+  font-family: 'Cinzel', sans-serif;
+  color: #88b04b;
+}
+
+ol {
+  padding-left: 170px;
+  padding-right: 150px;
+  font-size: 0.8em;
+  font-family: 'Cinzel', sans-serif;
+  color: #88b04b;
+  text-align: left;
 }
 
 .adventure {
@@ -109,21 +87,30 @@ footer {
   color: #bd9b21;
 }
 
-.intro {
-  padding-left: 150px;
-  padding-right: 150px;
-  font-size: 0.8em;
-  color: #88b04b;
-  font-family: 'Cinzel', sans-serif;
+h2 {
+  display: inline-block;
+  margin-top: 70px;
+  margin-left: 110px;
+  font-size: 4em;
+  font-family: 'Pirata One', sans-serif;
+  color: maroon;
+  text-decoration: none;
 }
 
-ol {
-  padding-left: 170px;
-  padding-right: 150px;
-  font-size: 0.8em;
-  color: #88b04b;
-  font-family: 'Cinzel', sans-serif;
-  text-align: left;
+.longh2 {
+  display: inline-block;
+  margin-top: 70px;
+  margin-left: 80px;
+  font-size: 4em;
+  font-family: 'Pirata One', sans-serif;
+  color: maroon;
+  text-decoration: none;
+}
+
+a {
+  font-family: 'Pirata One', sans-serif;
+  color: maroon;
+  text-decoration: none;
 }
 
 #ruins,
@@ -142,21 +129,16 @@ ol {
 }
 
 .button-box {
-  margin-left: 20px;
   display: inline-block;
+  margin-left: 20px;
 }
 
 .button-box input {
   display: block;
-  font-family: 'Cinzel Decorative';
+  font-family: 'Cinzel Decorative', sans-serif;
 }
 
 .logo {
-  display: block;
-  margin-left: 80px;
-}
-
-.logocourtyard {
   display: block;
   margin-left: 80px;
 }
@@ -174,11 +156,11 @@ ol {
 }
 
 .provisions-container {
+  display: inline-block;
   width: 320px;
   height: 150px;
   margin-left: 30px;
   margin-bottom: -30px;
-  display: inline-block;
 }
 
 .provisions-container img {
@@ -188,28 +170,23 @@ ol {
 }
 
 .virtue {
+  display: inline-block;
   width: 320px;
   height: 160px;
   margin-left: 30px;
   margin-bottom: -40px;
-  display: inline-block;
   border: 1px #bd9b21 inset;
   border-radius: 5px;
 }
 
 .virtuecourtyard {
+  display: inline-block;
   width: 320px;
   height: 160px;
   margin-left: 0;
   margin-bottom: -40px;
-  display: inline-block;
   border: 1px #bd9b21 inset;
   border-radius: 5px;
-}
-
-.clear {
-  background-color: lightblue;
-  font-family: sans-serif;
 }
 
 .curios {
@@ -234,48 +211,57 @@ ol {
 
 .message {
   position: absolute;
+  z-index: 2;
   width: 60vw;
   height: 136px;
   font-size: 1.2em;
   color: white;
   font-family: 'Cinzel', serif;
   border: 2px gray outset;
-  z-index: 2;
 }
 
 .links {
   padding-top: 20px;
   margin-left: 38%;
-  font-family: 'Pirata One';
   font-size: 1em;
+  font-family: 'Pirata One';
   color: maroon;
 }
 
 .msg-text {
+  z-index: 2;
   margin-top: -30px;
   margin-left: 160px;
   margin-bottom: 140px;
   font-family: 'Cinzel Decorative';
   color: #bd9b21;
-  z-index: 2;
 }
 
 ul {
-  list-style-type: none;
-  text-align: left;
   margin-top: 30px;
   margin-right: 30px;
+  text-align: left;
+  list-style-type: none;
+}
+
+footer {
+  width: 90%;
+  height: 10px;
+  margin: 0 auto;
+  background-color: #1c1c1c;
+  border-left: thick #bd9b21 double;
+  border-right: thick #bd9b21 double;
 }
 
 footer p {
-  text-align: center;
-  color: white;
   font-family: sans-serif;
   font-size: 0.8em;
+  color: white;
+  text-align: center;
 }
 
 footer a {
-  text-decoration: none;
   font-family: sans-serif;
   color: #bf9f00;
+  text-decoration: none;
 }
