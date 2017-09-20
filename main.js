@@ -55,7 +55,11 @@ $('.curios img').hover(function() {
   }
 })
 
-var $buttons = document.querySelectorAll('input')
+$('input').click(function () {
+  var dataId = $(this).attr('data-id')
+  var foundObj = findObjById(dataId, provisions)
+  $('.provdisplay').attr('src', foundObj.src)
+})
 
 var $clear = document.querySelectorAll('.clear')
 
