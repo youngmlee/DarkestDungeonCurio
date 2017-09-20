@@ -55,6 +55,8 @@ $('.curios img').hover(function() {
   }
 })
 
+var $buttons = document.querySelectorAll('input')
+
 var $clear = document.querySelectorAll('.clear')
 
 for (var i = 0; i < $clear.length; i++) {
@@ -419,5 +421,68 @@ var curios = [
     src: 'images/curios/courtyard/wine-crate.jpg',
     provsrc: 'images/provisions/antivenom-shovel.png',
     message: 'Antivenom: Stress Heal 30(100%). Shovel: Firewood(100%)'
+  }
+]
+
+var provisions = [
+  {
+    id: '1',
+    src: 'images/provisions/recommended/ruins-s.png'
+  },
+  {
+    id: '2',
+    src: 'images/provisions/recommended/ruins-m.png'
+  },
+  {
+    id: '3',
+    src: 'images/provisions/recommended/ruins-l.png'
+  },
+  {
+    id: '4',
+    src: 'images/provisions/recommended/warrens-s.png'
+  },
+  {
+    id: '5',
+    src: 'images/provisions/recommended/warrens-m.png'
+  },
+  {
+    id: '6',
+    src: 'images/provisions/recommended/warrens-l.png'
+  },
+  {
+    id: '7',
+    src: 'images/provisions/recommended/weald-s.png'
+  },
+  {
+    id: '8',
+    src: 'images/provisions/recommended/weald-m.png'
+  },
+  {
+    id: '9',
+    src: 'images/provisions/recommended/weald-l.png'
+  },
+  {
+    id: '10',
+    src: 'images/provisions/recommended/cove-s.png'
+  },
+  {
+    id: '11',
+    src: 'images/provisions/recommended/cove-m.png'
+  },
+  {
+    id: '12',
+    src: 'images/provisions/recommended/cove-l.png'
+  },
+  {
+    id: '13',
+    src: 'images/provisions/recommended/courtyard-s.jpg'
+  },
+  {
+    id: '14',
+    src: 'images/provisions/recommended/courtyard-m.jpg'
+  },
+  {
+    id: '15',
+    src: 'images/provisions/recommended/courtyard-l.jpg'
   }
 ]
