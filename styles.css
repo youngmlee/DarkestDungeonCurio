@@ -16,15 +16,22 @@ h2 {
   margin-top: 70px;
   margin-left: 110px;
   font-size: 4em;
-}
-
-a {
   text-decoration: none;
   font-family: 'Pirata One', sans-serif;
   color: maroon;
 }
 
-h2 {
+.longh2 {
+  display: inline-block;
+  margin-top: 70px;
+  margin-left: 80px;
+  font-size: 4em;
+  text-decoration: none;
+  font-family: 'Pirata One', sans-serif;
+  color: maroon;
+}
+
+a {
   text-decoration: none;
   font-family: 'Pirata One', sans-serif;
   color: maroon;
@@ -52,7 +59,7 @@ footer {
 .characterl {
   position: absolute;
   margin: auto;
-  top: 0;
+  top: -100px;
   left: 0;
   right: 700px;
   bottom: 50px;
@@ -64,7 +71,7 @@ footer {
 .characterr {
   position: absolute;
   margin: auto;
-  top: 0;
+  top: -100px;
   left: 700px;
   right: 0;
   bottom: 50px;
@@ -76,7 +83,7 @@ footer {
 .dd-logo {
   position: absolute;
   margin: auto;
-  top: 0;
+  top: -100px;
   left: 0;
   right: 0;
   bottom: 180px;
@@ -87,7 +94,7 @@ footer {
 .links-main {
   position: absolute;
   margin: auto;
-  top: 0;
+  top: -100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -99,15 +106,24 @@ footer {
 
 .adventure {
   font-size: 2em;
-  color: gold;
+  color: #bd9b21;
 }
 
 .intro {
   padding-left: 150px;
   padding-right: 150px;
   font-size: 0.8em;
-  color: white;
+  color: #88b04b;
   font-family: 'Cinzel', sans-serif;
+}
+
+ol {
+  padding-left: 170px;
+  padding-right: 150px;
+  font-size: 0.8em;
+  color: #88b04b;
+  font-family: 'Cinzel', sans-serif;
+  text-align: left;
 }
 
 #ruins,
@@ -116,7 +132,7 @@ footer {
 #cove,
 #courtyard {
   width: 90%;
-  height: 600px;
+  height: 700px;
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 200px;
@@ -136,6 +152,11 @@ footer {
 }
 
 .logo {
+  display: block;
+  margin-left: 80px;
+}
+
+.logocourtyard {
   display: block;
   margin-left: 80px;
 }
@@ -165,6 +186,26 @@ footer {
   width: 320px;
   height: 150px;
   display: none;
+}
+
+.virtue {
+  width: 320px;
+  height: 160px;
+  margin-left: 30px;
+  margin-bottom: -40px;
+  display: inline-block;
+  border: 1px #bd9b21 inset;
+  border-radius: 5px;
+}
+
+.virtuecourtyard {
+  width: 320px;
+  height: 160px;
+  margin-left: 0;
+  margin-bottom: -40px;
+  display: inline-block;
+  border: 1px #bd9b21 inset;
+  border-radius: 5px;
 }
 
 .clear {
