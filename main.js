@@ -58,7 +58,7 @@ $('.curios img').hover(function() {
 $('input').click(function () {
   var dataId = $(this).attr('data-id')
   var foundObj = findObjById(dataId, provisions)
-  $('.provdisplay').attr('src', foundObj.src)
+  $(this).closest('.location').find('.provdisplay').attr('src', foundObj.src)
 })
 
 var curios = [
@@ -84,7 +84,7 @@ var curios = [
     id: '4',
     src: 'images/curios/all/heirloom-chest.png',
     provsrc: 'images/provisions/skeleton-key.png',
-    message: 'Heirlooms x4(100%). Without cleansing: Heirlooms x2(75%), Bleed OR Blight(12.5%)'
+    message: 'Heirlooms x4(100%). Without cleansing: Heirlooms x2(75%), Bleed(12.5%), Blight(12.5%)'
   },
   {
     id: '5',
@@ -114,7 +114,7 @@ var curios = [
     id: '9',
     src: 'images/curios/all/stack-of-books.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Stress +25 OR Random Positive Quirk(22.2%), Journal Entry OR Nothing(16.7%), Random Negative Quirk OR Decrease Light 25(11.1%)'
+    message: 'Stress +25(22.2%), Random Positive Quirk(22.2%), Journal Entry(16.7%), Nothing(16.7%), Random Negative Quirk(11.1%), Decrease Light 25(11.1%)'
   },
   {
     id: '10',
@@ -138,13 +138,13 @@ var curios = [
     id: '13',
     src: 'images/curios/ruins/bookshelf.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Scouting OR Stress +15 OR Journal Entry OR Nothing(20%), Positive Quirk(13.3%), Negative Quirk(6.7%)'
+    message: 'Scouting(20%), Stress +15(20%), Journal Entry(20%), Nothing(20%), Positive Quirk(13.3%), Negative Quirk(6.7%)'
   },
   {
     id: '14',
     src: 'images/curios/ruins/confession-booth.png',
     provsrc: 'images/provisions/holy-water.png',
-    message: 'Stress Heal 30(100%). With no provision: Stress +15(50%), Gold/Trinket x6 OR Purge Negative Quirk(25%)'
+    message: 'Stress Heal 30(100%). With no provision: Stress +15(50%), Gold/Trinket x6(25%), Purge Negative Quirk(25%)'
   },
   {
     id: '15',
@@ -156,7 +156,7 @@ var curios = [
     id: '16',
     src: 'images/curios/ruins/holy-fountain.png',
     provsrc: 'images/provisions/holy-water.png',
-    message: 'Stress Heal 20, Cure Status Effects, Heal 12 HP(100%). Without cleansing: Stress Heal 10 + Cure Status Effects + Heal 5HP OR Gold/Gems x2(50%)'
+    message: 'Stress Heal 20, Cure Status Effects, Heal 12 HP(100%). Without cleansing: Stress Heal 10 + Cure Status Effects + Heal 5HP(50%), Gold/Gems x2(50%)'
   },
   {
     id: '17',
@@ -180,13 +180,13 @@ var curios = [
     id: '20',
     src: 'images/curios/ruins/sarcophagus.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Gold/Heirlooms x2(60%), Negative Quirk: Thanatophobia OR Nothing(20%)'
+    message: 'Gold/Heirlooms x2(60%), Negative Quirk: Thanatophobia(20%), Nothing(20%)'
   },
   {
     id: '21',
     src: 'images/curios/ruins/suit-of-armor.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Buff PROT/DODGE +10 Until Camp(75%), Positive Quirk: Ruins Adventurer OR Positive Quirk: Ruins Tactician(12.5%)'
+    message: 'Buff PROT/DODGE +10 Until Camp(75%), Positive Quirk: Ruins Adventurer(12.5%), Positive Quirk: Ruins Tactician(12.5%)'
   },
   {
     id: '22',
@@ -216,7 +216,7 @@ var curios = [
     id: '26',
     src: 'images/curios/warrens/occult-scrawlings.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Random Positive Quirk(33.3%), Stress +25 OR Nothing(25%), Random Negative Quirk(16.7%)'
+    message: 'Random Positive Quirk(33.3%), Stress +25(25%), Nothing(25%), Random Negative Quirk(16.7%)'
   },
   {
     id: '27',
@@ -240,13 +240,13 @@ var curios = [
     id: '30',
     src: 'images/curios/warrens/sacrificial-stone.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Stress +50(50%), Purge Negative Quirk(25%), Positive Quirk: Warrens Explorer/Scrounger(12.5%)'
+    message: 'Stress +50(50%), Purge Negative Quirk(25%), Positive Quirk: Warrens Explorer(12.5%), Postive Quirk: Warrens Scrounger(12.5%)'
   },
   {
     id: '31',
     src: 'images/curios/weald/ancient-coffin.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Gold/Heirlooms x2(50%), Nothing(33.3%), Positive Quirk: Weald Adventurer/Explorer(8.3%)'
+    message: 'Gold/Heirlooms x2(50%), Nothing(33.3%), Positive Quirk: Weald Adventurer(8.3%), Positive Quirk: Weald Explorer(8.3%)'
   },
   {
     id: '32',
@@ -264,7 +264,7 @@ var curios = [
     id: '34',
     src: 'images/curios/weald/left-luggage.png',
     provsrc: 'images/provisions/antivenom-key.png',
-    message: 'Any Loot x3(100%). Without cleansing: Any Loot x4 + Jouranl Entry(50%), OR Blight(50%)'
+    message: 'Any Loot x3(100%). Without cleansing: Any Loot x4 + Jouranl Entry(50%), Blight(50%)'
   },
   {
     id: '35',
@@ -276,7 +276,7 @@ var curios = [
     id: '36',
     src: 'images/curios/weald/old-tree.png',
     provsrc: 'images/provisions/antivenom.png',
-    message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), OR Blight/Nothing(25%)'
+    message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), Blight/Nothing(25%)'
   },
   {
     id: '37',
@@ -294,7 +294,7 @@ var curios = [
     id: '39',
     src: 'images/curios/weald/travellers-tent.png',
     provsrc: 'images/provisions/no-action.png',
-    message: 'Scouting OR Gold/Supplies x4 + Gold/Heirlooms x4 + Journal Entry(37.5%), Stress +25 OR Nothing(12.5%)'
+    message: 'Scouting(37.5%), Gold/Supplies x4 + Gold/Heirlooms x4 + Journal Entry(37.5%), Stress +25(12.5%), Nothing(12.5%)'
   },
   {
     id: '40',
@@ -306,7 +306,7 @@ var curios = [
     id: '41',
     src: 'images/curios/cove/barnacle-crusted-chest.png',
     provsrc: 'images/provisions/shovel.png',
-    message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), Bleed/Nothing(25%)'
+    message: 'Any Loot x3(100%). Without cleansing: Any Loot x2(50%), Bleed(25%), Nothing(25%)'
   },
   {
     id: '42',
@@ -330,7 +330,7 @@ var curios = [
     id: '45',
     src: 'images/curios/cove/fish-idol.png',
     provsrc: 'images/provisions/holy-water.png',
-    message: 'Buff +18% DMG until Camp(50%)'
+    message: 'Buff +18% DMG until Camp(50%), Buff 10% DMG, 5 ACC until Camp(50%)'
   },
   {
     id: '46',
