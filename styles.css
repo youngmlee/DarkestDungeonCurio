@@ -175,7 +175,7 @@ a {
   height: 160px;
   margin-left: 10px;
   margin-bottom: -40px;
-  border: 1px #bd9b21 inset;
+  border: 1px gray solid;
   border-radius: 5px;
 }
 
